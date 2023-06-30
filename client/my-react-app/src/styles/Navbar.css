@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@200&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ysabeau Infant", sans-serif;
+}
+
+nav {
+  display: flex;
+  height: 70px;
+  width: 100%;
+  background: #713939;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px 0 150px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  user-select: none;
+}
+
+nav .logo {
+  height: 2.3rem;
+  width: 2rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+nav .logo-label {
+  color: #fff;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-left: 0.6rem;
+}
+
+nav .rightSide {
+  display: flex;
+}
+
+nav .rightSide a {
+  color: #dcdcdc;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+}
+
+nav .rightSide a.active,
+nav .rightSide a:hover {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+nav .menu-btn i {
+  color: #ffffff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  nav {
+    padding: 0 40px 0 50px;
+  }
+
+  nav .menu-btn i {
+    display: block;
+  }
+
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+
+  nav .rightSide {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    background: #ffffff;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  #click:checked ~ .rightSide {
+    left: 0;
+  }
+
+  nav .rightSide a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: #713939;
+  }
+
+  #click:checked ~ .rightSide a {
+    margin-left: 0px;
+  }
+
+  nav .rightSide a.active,
+  nav .rightSide a:hover {
+    background: none;
+    color: #713939;
+    font-weight: 600;
+    box-shadow: none;
+  }
+}
+
+.content div {
+  font-size: 40px;
+  font-weight: 700;
+}
